@@ -5,8 +5,8 @@ import html2canvas from 'html2canvas';
 import './index.css';
 
 const CONTRACTORS = [
-  "Construtora Alpha S.A.",
-  "Engenharia Beta Ltda."
+  "Leandro",
+  "Manoel"
 ];
 
 function App() {
@@ -108,7 +108,7 @@ function App() {
     <>
       <div className="app-container">
         <header className="header">
-          <h1>Acompanhamento de Obras</h1>
+          <h1>Acompanhamento de Obras KRM</h1>
           <p>Registro fotográfico e informativo em lote</p>
         </header>
 
