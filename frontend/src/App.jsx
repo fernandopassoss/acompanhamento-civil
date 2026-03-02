@@ -3,6 +3,7 @@ import { Camera, FileText, Loader2, CheckCircle2, PlusCircle, Trash2 } from 'luc
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import './index.css';
+import logo from './assets/krm.png';
 
 const CONTRACTORS = [
   "Leandro",
@@ -108,7 +109,8 @@ function App() {
     <>
       <div className="app-container">
         <header className="header">
-          <h1>Acompanhamento de Obras KRM</h1>
+          <img src={logo} alt="KRM Logo" className='logo' />
+          <h1>Acompanhamento de Obras - KRM</h1>
           <p>Registro fotográfico e informativo em lote</p>
         </header>
 
