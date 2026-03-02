@@ -73,6 +73,9 @@ function App() {
 
     try {
       const pdf = new jsPDF('p', 'mm', 'a4');
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pageHeight = pdf.internal.pageSize.getHeight();
+      let currentY = 0;
 
       for (let i = 0; i < obras.length; i++) {
         const element = document.getElementById(`report-obra-${i}`);
@@ -80,13 +83,15 @@ function App() {
         const canvas = await html2canvas(element, { scale: 2, useCORS: true });
         const imgData = canvas.toDataURL('image/png');
 
-        const pdfWidth = pdf.internal.pageSize.getWidth();
-        const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+        const imgHeight = (canvas.height * pdfWidth) / canvas.width;
 
-        if (i > 0) {
+        if (currentY + imgHeight > pageHeight && currentY > 0) {
           pdf.addPage();
+          currentY = 0;
         }
-        pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+
+        pdf.addImage(imgData, 'PNG', 0, currentY, pdfWidth, imgHeight);
+        currentY += imgHeight;
       }
 
       const fileNameData = obras.length === 1
@@ -267,9 +272,9 @@ function App() {
               </div>
             </div>
 
-            <div style={{ marginTop: '50px', paddingTop: '20px', borderTop: '1px solid #ccc', textAlign: 'center', color: '#666', fontSize: '14px' }}>
+            <div style={{ marginTop: '30px', paddingTop: '15px', borderTop: '1px solid #ccc', textAlign: 'center', color: '#666', fontSize: '14px' }}>
               <p>Relatório gerado automaticamente pelo Sistema KRM de Acompanhamento de Obras.</p>
-              <p style={{ marginTop: '5px' }}>Página {idx + 1} de {obras.length}</p>
+              <p style={{ marginTop: '5px' }}>Obra {idx + 1} de {obras.length}</p>
             </div>
           </div>
         ))}
