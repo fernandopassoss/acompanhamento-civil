@@ -127,12 +127,12 @@ function App() {
               </div>
 
               <div className="form-group">
-                <label>Nome da Obra</label>
+                <label>Dono da Obra</label>
                 <input
                   type="text"
                   name="workName"
                   className="form-control"
-                  placeholder="Ex: Edifício Central Park"
+                  placeholder="Ex: João da Silva"
                   value={obra.workName}
                   onChange={(e) => handleInputChange(index, e.target)}
                   required
@@ -241,14 +241,14 @@ function App() {
             }}
           >
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '2px solid #F05A28', paddingBottom: '15px', marginBottom: '20px' }}>
-              <img src="/logo.png" alt="KRM Logo" style={{ height: '60px', objectFit: 'contain' }} />
+              <img src={logo} alt="KRM Logo" style={{ height: '60px', objectFit: 'contain' }} />
               <h1 style={{ color: '#1f2937', margin: 0, fontSize: '24px', textAlign: 'right', fontWeight: 'bold' }}>
-                Relatório de Acompanhamento<br />de Obra
+                Relatório de Acompanhamento<br />de Obras
               </h1>
             </div>
 
             <div style={{ margin: '30px 0', fontSize: '18px', lineHeight: '1.6' }}>
-              <p><strong>Obra:</strong> {obra.workName}</p>
+              <p><strong>Dono da Obra:</strong> {obra.workName}</p>
               <p><strong>Empreiteiro Responsável:</strong> {obra.contractor}</p>
               <p><strong>Data da Vistoria:</strong> {new Date(obra.date).toLocaleDateString('pt-BR')}</p>
             </div>
