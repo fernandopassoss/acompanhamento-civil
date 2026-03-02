@@ -99,6 +99,8 @@ body {
 
 .form-control {
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
   padding: 14px 16px;
   background: rgba(255, 255, 255, 0.9);
   border: 1px solid var(--glass-border);
@@ -236,8 +238,16 @@ textarea.form-control {
 
 @media (max-width: 600px) {
   .app-container {
-    padding: 24px;
+    padding: 16px;
     border-radius: 16px;
+  }
+
+  .obra-card {
+    padding: 16px;
+  }
+
+  .form-control {
+    padding: 12px;
   }
 }
 
