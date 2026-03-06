@@ -253,7 +253,7 @@ function App() {
             </div>
 
             <div style={{ margin: '30px 0', fontSize: '18px', lineHeight: '1.6' }}>
-              <p><strong>Dono da Obra:</strong> {obra.workName}</p>
+              <p><strong>Dono da Obra ou Lote:</strong> {obra.workName}</p>
               <p><strong>Empreiteiro Responsável:</strong> {obra.contractor}</p>
               <p><strong>Data da Vistoria:</strong> {new Date(obra.date).toLocaleDateString('pt-BR')}</p>
             </div>
