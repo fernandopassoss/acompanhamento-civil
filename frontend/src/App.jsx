@@ -6,7 +6,7 @@ import './index.css';
 import logo from './assets/krm.png';
 
 const CONTRACTORS = [
-  "Leandro",
+  "Evandro",
   "Manoel"
 ];
 
