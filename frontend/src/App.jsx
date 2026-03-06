@@ -267,7 +267,7 @@ function App() {
               <h3 style={{ borderBottom: '1px solid #eee', paddingBottom: '10px', marginBottom: '15px' }}>Registro Fotográfico</h3>
               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px' }}>
                 {obra.photos.map((photo, i) => photo && (
-                  <img key={i} src={photo} alt={`Foto ${i + 1}`} style={{ maxWidth: '85%', maxHeight: '220px', objectFit: 'contain', borderRadius: '8px', border: '1px solid #ddd' }} />
+                  <img key={i} src={photo} alt={`Foto ${i + 1}`} style={{ maxWidth: '85%', maxHeight: '210px', objectFit: 'contain', borderRadius: '8px', border: '1px solid #ddd' }} />
                 ))}
               </div>
             </div>
