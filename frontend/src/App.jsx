@@ -132,7 +132,7 @@ function App() {
               </div>
 
               <div className="form-group">
-                <label>Dono da Obra</label>
+                <label>Dono da Obra ou Lote</label>
                 <input
                   type="text"
                   name="workName"
@@ -265,9 +265,9 @@ function App() {
 
             <div style={{ margin: '20px 0' }}>
               <h3 style={{ borderBottom: '1px solid #eee', paddingBottom: '10px', marginBottom: '15px' }}>Registro Fotográfico</h3>
-              <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '15px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px' }}>
                 {obra.photos.map((photo, i) => photo && (
-                  <img key={i} src={photo} alt={`Foto ${i + 1}`} style={{ width: '31%', maxHeight: '200px', objectFit: 'cover', borderRadius: '8px', border: '1px solid #ddd' }} />
+                  <img key={i} src={photo} alt={`Foto ${i + 1}`} style={{ maxWidth: '85%', maxHeight: '220px', objectFit: 'contain', borderRadius: '8px', border: '1px solid #ddd' }} />
                 ))}
               </div>
             </div>
